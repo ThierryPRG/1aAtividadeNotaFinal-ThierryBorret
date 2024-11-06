@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        form { background: #054f77; padding: 20px; border-radius: 5px; }
+        input, textarea { width: 100%; margin: 10px 0; }
+        button { background: #533483; color: white; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Contato</h1>
+    <form id="f" onsubmit="enviar(event)">
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Mensagem" rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+    <div class="msg"></div>
+
+    <script>
+        function enviar(e) {
+            e.preventDefault();
+            document.querySelector('.msg').textContent = 'Mensagem enviada!';
+            this.reset();
+        }
+    </script>
+</body>
+</html>
